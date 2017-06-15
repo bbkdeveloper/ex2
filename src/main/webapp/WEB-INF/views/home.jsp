@@ -17,7 +17,12 @@
 <h2>GIT TEST</h2>
 <ul>
 	<li>choa</li>
+<<<<<<< HEAD
 	<li>master</li>
+=======
+	<li>BugFix_1</li>
+	<li>BugFix_2</li>
+>>>>>>> BugFix_1
 </ul>
 </body>
 </html>
