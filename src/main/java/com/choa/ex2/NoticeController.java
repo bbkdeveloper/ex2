@@ -1,7 +1,8 @@
 package com.choa.ex2;
 
-
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -14,20 +15,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.choa.notice.NoticeDTO;
 import com.choa.notice.NoticeService;
 
-
 @Controller
 @RequestMapping(value="/notice/**")
 public class NoticeController {
 
 	@Inject	//Data type으로 찾는다
 	private NoticeService noticeService;
-	
-	
-	@RequestMapping(value="test")
-	public void test(){
-		System.out.println("noticeService=="+noticeService);
-		noticeService.test();
-	}
 	
 	//NoticeList
 	@RequestMapping(value="noticeList", method=RequestMethod.GET)
@@ -48,8 +41,8 @@ public class NoticeController {
 	
 	//NoticeWriteForm writeForm
 	@RequestMapping(value="noticeWrite", method=RequestMethod.GET)
-	public void noticeWrite(Model model)throws Exception{
-		model.addAttribute("path", "Write");
+	public void noticeWrite()throws Exception{
+		
 	}
 	
 	//NoticeWrite
@@ -71,11 +64,9 @@ public class NoticeController {
 	
 	//NoticeUpdateForm
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.GET)
-	public String noticeUpdate(Model model, int num)throws Exception{
+	public void noticeUpdate(Model model, int num)throws Exception{
 		NoticeDTO noticeDTO = noticeService.noticeView(num);
 		model.addAttribute("dto", noticeDTO);
-		model.addAttribute("path", "Update");
-		return "notice/noticeWrite";
 	}
 	
 	//NoticeUpdate

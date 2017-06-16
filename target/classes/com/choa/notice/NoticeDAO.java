@@ -9,28 +9,23 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.choa.util.DBConnector;
 import com.choa.util.RowMaker;
 
 //Repository : NoticeDAO noticeDAO = new NoticeDAO();
-
-@Repository("notice")		//("notice")는 id가 된다
+@Repository
 public class NoticeDAO {
 
 	@Inject
 	private DataSource dataSource;
-	//dataSource는 우리가 만든 코드가 아니기 때문에 열어볼 수 없으므로 xml에서 해결해야한다
 	
 	//inject를 이용하기때문에, 생성자가 필요가 없다
 	/*public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}*/
 
-	
 	
 	//totalCount
 	public int noticeCount()throws Exception{
