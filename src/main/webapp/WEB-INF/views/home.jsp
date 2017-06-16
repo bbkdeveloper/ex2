@@ -5,6 +5,8 @@
 	<title>Home</title>
 </head>
 <body>
+<a href="notice/noticeList">NoticeList</a>
+
 <h2>Master ADD1</h2>
 <h1>
 	Hello world!  
